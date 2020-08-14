@@ -1,0 +1,13 @@
+<!--
+
+ -->
+<mapper namespace="smUser">
+    <!-- 查询列表 -->
+    <select id="listSmUser" resultType="SmUser">
+        select * from sm_user
+    </select>
+    <!-- 查询单个用户 需要传参 -->
+    <select id="getSmUser"  paramType="SmUser" resultType="SmUser">
+        select * from sm_user where id=#{id} and user_name=#{userName}
+    </select>
+</mapper>

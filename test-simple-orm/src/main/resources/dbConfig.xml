@@ -1,0 +1,18 @@
+<!-- 配置根标签 -->
+<configuration>
+    <!-- 定义数据库连接信息配置 -->
+    <dataSource>
+        <!-- 数据库连接驱动 -->
+        <properties name="driverClass">com.mysql.cj.jdbc.Driver</properties>
+        <!-- 数据库连接地址 -->
+        <properties name="url">jdbc:mysql://127.0.0.1:3306/simple-orm?characterEncoding=utf-8</properties>
+        <!-- 数据库连接用户 -->
+        <properties name="user">root</properties>
+        <!-- 数据库连接密码 -->
+        <properties name="pass">yxh123..</properties>
+    </dataSource>
+    <!-- 定义SQL语句映射相关信息 -->
+    <mappers>
+        <mapper xmlPath="SmUserMapper" />
+    </mappers>
+</configuration>
