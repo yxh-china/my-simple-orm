@@ -10,4 +10,16 @@
     <select id="getSmUser"  paramType="SmUser" resultType="SmUser">
         select * from sm_user where id=#{id} and user_name=#{userName}
     </select>
+    <!-- 增加用户 -->
+    <insert id="insertSmUser" paramType="SmUser">
+        insert into sm_user(id,userName) values(#{id},#{userName})
+    </insert>
+    <!-- 修改用户 -->
+    <update id="updateUser" paramType="SmUser">
+        update sm_user set user_name=#{userName} where id=#{id}
+    </update>
+    <!--  删除用户  -->
+    <delete id="deleteSmUserById" paramType="String">
+        delete from sm_user where id=#{id}
+    </delete>
 </mapper>

@@ -3,13 +3,13 @@
     <!-- 定义数据库连接信息配置 -->
     <dataSource>
         <!-- 数据库连接驱动 -->
-        <properties name="driverClass">com.mysql.cj.jdbc.Driver</properties>
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
         <!-- 数据库连接地址 -->
-        <properties name="url">jdbc:mysql://127.0.0.1:3306/simple-orm?characterEncoding=utf-8</properties>
+        <property name="url">jdbc:mysql://127.0.0.1:3306/simple-orm?characterEncoding=utf-8</property>
         <!-- 数据库连接用户 -->
-        <properties name="user">root</properties>
+        <property name="user">root</property>
         <!-- 数据库连接密码 -->
-        <properties name="pass">yxh123..</properties>
+        <property name="pass">yxh123..</property>
     </dataSource>
     <!-- 定义SQL语句映射相关信息 -->
     <mappers>
