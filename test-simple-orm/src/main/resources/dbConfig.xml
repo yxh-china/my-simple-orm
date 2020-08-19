@@ -13,6 +13,6 @@
     </dataSource>
     <!-- 定义SQL语句映射相关信息 -->
     <mappers>
-        <mapper xmlPath="SmUserMapper" />
+        <mapper xml="SmUserMapper" classPath="com.yxh.www.testorm.dao.SmUserDao"/>
     </mappers>
 </configuration>

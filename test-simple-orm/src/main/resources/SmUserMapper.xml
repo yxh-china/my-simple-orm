@@ -12,7 +12,7 @@
     </select>
     <!-- 增加用户 -->
     <insert id="insertSmUser" paramType="SmUser">
-        insert into sm_user(id,userName) values(#{id},#{userName})
+        insert into sm_user(id,user_name) values(#{id},#{userName})
     </insert>
     <!-- 修改用户 -->
     <update id="updateUser" paramType="SmUser">
