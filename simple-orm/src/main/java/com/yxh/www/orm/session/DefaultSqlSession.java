@@ -6,7 +6,6 @@ import com.yxh.www.orm.pojo.Configuration;
 import com.yxh.www.orm.pojo.MappedStatement;
 
 import java.lang.reflect.*;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +40,6 @@ public class DefaultSqlSession implements SqlSession{
                 String className = method.getDeclaringClass().getSimpleName();
                 // statementId
                 String statementId=className+"."+methodName;
-                //
                 MappedStatement mappedStatement=configuration.getMappedStatementMap().get(statementId);
                 Type genericReturnType=method.getGenericReturnType();
                 ArrayList arrayList = new ArrayList ();

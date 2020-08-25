@@ -1,6 +1,7 @@
 package com.yxh.www.orm.pojo;
 
 
+
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ public class Configuration {
      * key:由xxxMapper里的namespace+.+具体SQL映射配置的id组成
      * value:SQL映射配置
      */
-    private Map<String,MappedStatement> mappedStatementMap=new HashMap<String, MappedStatement>();
+    private Map<String, MappedStatement> mappedStatementMap=new HashMap<String, MappedStatement>();
 
     public DataSource getDataSource() {
         return dataSource;

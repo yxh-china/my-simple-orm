@@ -1,5 +1,7 @@
 package com.yxh.www.orm.config;
 
+import com.yxh.www.orm.pojo.MappedStatement;
+
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +19,7 @@ public class Configuration {
     /**
      * SQL映射清单信息
      */
-    private Map<String,MappedStatement> mappedStatementMap=new HashMap<String, MappedStatement>();
+    private Map<String, MappedStatement> mappedStatementMap=new HashMap<String, MappedStatement>();
 
     public DataSource getDataSource() {
         return dataSource;
