@@ -13,6 +13,9 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * 配置文件装配器
+ */
 public class XMLConfigBuilder {
     private final Configuration configuration;
 

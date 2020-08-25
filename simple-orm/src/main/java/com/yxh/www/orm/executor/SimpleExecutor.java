@@ -65,6 +65,11 @@ public class SimpleExecutor implements Executor{
             }
             results.add(o);
         }
+        // 如果涉及数据的修改变动，需要提交事务
+        if (mappedStatement.getQueryType().equals("insert")||mappedStatement.getQueryType().equals("update")||mappedStatement.getQueryType().equals("delete")) {
+            connection.commit();
+        }
+        // 返回结果
         return results;
     }
 

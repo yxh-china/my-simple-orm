@@ -2,6 +2,9 @@ package com.yxh.www.orm.util;
 
 import java.io.InputStream;
 
+/**
+ * 配置文件加载器
+ */
 public class Resource {
 
     /**
