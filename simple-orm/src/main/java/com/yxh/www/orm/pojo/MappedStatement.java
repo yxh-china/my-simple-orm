@@ -5,8 +5,8 @@ package com.yxh.www.orm.pojo;
  */
 public class MappedStatement {
     private String id;
-    private String paramType;
-    private String resultType;
+    private Class<?> paramType;
+    private Class<?> resultType;
     private String sql;
     private String queryType;
 
@@ -18,19 +18,19 @@ public class MappedStatement {
         this.id = id;
     }
 
-    public String getParamType() {
+    public Class<?> getParamType() {
         return paramType;
     }
 
-    public void setParamType(String paramType) {
+    public void setParamType(Class<?> paramType) {
         this.paramType = paramType;
     }
 
-    public String getResultType() {
+    public Class<?> getResultType() {
         return resultType;
     }
 
-    public void setResultType(String resultType) {
+    public void setResultType(Class<?> resultType) {
         this.resultType = resultType;
     }
 

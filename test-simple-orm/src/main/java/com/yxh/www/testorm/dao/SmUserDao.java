@@ -1,4 +1,9 @@
 package com.yxh.www.testorm.dao;
 
-public class SmUserDao {
+import com.yxh.www.testorm.entity.SmUser;
+
+import java.util.List;
+
+public interface SmUserDao {
+    List<SmUser> listSmUser(SmUser smUser);
 }

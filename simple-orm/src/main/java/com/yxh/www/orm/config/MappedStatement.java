@@ -1,4 +1,4 @@
-package com.yxh.www.test;
+package com.yxh.www.orm.config;
 
 import java.util.HashMap;
 import java.util.Map;

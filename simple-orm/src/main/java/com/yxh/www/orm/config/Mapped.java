@@ -1,4 +1,4 @@
-package com.yxh.www.test;
+package com.yxh.www.orm.config;
 
 /**
  * SQL映射配置信息，包括SQL映射ID、SQL参数类型、SQL结果集类型、SQL内容 配置信息

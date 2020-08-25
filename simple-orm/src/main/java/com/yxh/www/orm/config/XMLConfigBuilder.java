@@ -25,7 +25,7 @@ public class XMLConfigBuilder {
      * @param xmlInputStream 配置文件字节输入流
      * @return  {@link Configuration} 核心配置文件容器对象
      */
-    public Configuration parseConfig(InputStream xmlInputStream) throws DocumentException, PropertyVetoException {
+    public Configuration parseConfig(InputStream xmlInputStream) throws DocumentException, PropertyVetoException, ClassNotFoundException {
         // 把字节输入流使用dom4j解析成Document对象
         Document document = new SAXReader().read(xmlInputStream);
         // 拿到配置文件的根元素对象
@@ -38,7 +38,7 @@ public class XMLConfigBuilder {
             configProperties.setProperty(property.attribute("name").getStringValue(),property.getText());
         }
         // 使用c3p0连接池创建数据源对象
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        ComboPooledDataSource dataSource = new ComboPooledDataSource("c3p0");;
         dataSource.setDriverClass(configProperties.getProperty("driverClass"));
         dataSource.setJdbcUrl(configProperties.getProperty("url"));
         dataSource.setUser(configProperties.getProperty("user"));
@@ -50,7 +50,7 @@ public class XMLConfigBuilder {
         // 取出每一个配置文件的Mapper文件的路径
         for (Element mapperElement : mapperElementList) {
             // 获取Mapper配置文件的字节输入流
-            InputStream mapperInputStream = Resource.getResourceAsStream(mapperElement.attribute("xmlPath").getStringValue());
+            InputStream mapperInputStream = Resource.getResourceAsStream(mapperElement.attribute("xml").getStringValue());
             // 解析Mapper配置文件
             XMLMapperBuilder xmlMapperBuilder = new XMLMapperBuilder(this.configuration);
             xmlMapperBuilder.parse(mapperInputStream);

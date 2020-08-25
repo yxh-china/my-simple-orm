@@ -3,9 +3,9 @@
     <!-- 定义数据库连接信息配置 -->
     <dataSource>
         <!-- 数据库连接驱动 -->
-        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
         <!-- 数据库连接地址 -->
-        <property name="url">jdbc:mysql://127.0.0.1:3306/simple-orm?characterEncoding=utf-8</property>
+        <property name="url">jdbc:mysql://127.0.0.1:3306/simple-orm</property>
         <!-- 数据库连接用户 -->
         <property name="user">root</property>
         <!-- 数据库连接密码 -->
@@ -13,6 +13,6 @@
     </dataSource>
     <!-- 定义SQL语句映射相关信息 -->
     <mappers>
-        <mapper xml="SmUserMapper" classPath="com.yxh.www.testorm.dao.SmUserDao"/>
+        <mapper xml="SmUserMapper.xml" classPath="com.yxh.www.testorm.dao.SmUserDao"/>
     </mappers>
 </configuration>

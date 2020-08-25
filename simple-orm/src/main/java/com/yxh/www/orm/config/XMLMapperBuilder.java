@@ -16,7 +16,7 @@ public class XMLMapperBuilder {
     public XMLMapperBuilder(Configuration configuration) {
         this.configuration=configuration;
     }
-    public void parse(InputStream mapperInputStream) throws DocumentException {
+    public void parse(InputStream mapperInputStream) throws DocumentException, ClassNotFoundException {
         // 转换Document
         Document mapperDocument = new SAXReader().read(mapperInputStream);
         // 获取根元素
@@ -27,14 +27,18 @@ public class XMLMapperBuilder {
         List<Element> mappedStatementElement = rootElement.elements();
         for (Element element : mappedStatementElement) {
             String id = element.attribute("id").getStringValue();
-            String resultType = element.attribute("resultType").getStringValue();
-            String paramType = element.attribute("paramType").getStringValue();
+            String resultType = element.attribute("resultType")!=null?element.attribute("resultType").getStringValue():null;
+            String paramType = element.attribute("paramType")!=null?element.attribute("paramType").getStringValue():null;
             String sql = element.getText();
             String sqlQueryType = element.getName();
             MappedStatement mappedStatement = new MappedStatement();
             mappedStatement.setId(id);
-            mappedStatement.setParamType(paramType);
-            mappedStatement.setResultType(resultType);
+            if (paramType!=null) {
+                mappedStatement.setParamType(Class.forName(paramType));
+            }
+            if (resultType!=null) {
+                mappedStatement.setResultType(Class.forName(resultType));
+            }
             mappedStatement.setSql(sql);
             mappedStatement.setQueryType(sqlQueryType);
             this.configuration.getMappedStatementMap().put(namespace+"."+id,mappedStatement);
